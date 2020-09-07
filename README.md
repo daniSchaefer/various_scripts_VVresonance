@@ -16,15 +16,16 @@ as well as a table like this (numbers given here for VV_HPHP):
         
 giving the number of events per bkg as well as the relative contribution to all background events
 
-
-```py makeProjections.py directory_results_from_makeInputs/ category
+```
+py makeProjections.py directory_results_from_makeInputs/ category
 ```
 
 ## evaluate PDF uncertainties from the lhapdf package
 
 first run the script :
 
-```py evaluatePDFUncertainties.py filename.root outputfilename.txt
+```
+py evaluatePDFUncertainties.py filename.root outputfilename.txt
 
 ```
 the output of this script is a outputfilename.txt containing three numbers: processed events, the number of all events with differing pdfweights applied, and those same numbers for the HPHP and HPLP category! these scripts are old and contain the tau21DDT selections used in B2G18002!
@@ -134,3 +135,8 @@ py goftest.py -o outputname -f combinefilecontainingtoys.root -s combinefilecont
 The input files here are made using combine (combine -M GoodnessOfFit workspace_JJ_BulkGWW_13TeV.root --algo=saturated -t 10 -s -1 --toysFreq) with 1000 toys (best to parallelize and then hadd the files so it can be plotted with the goftest.py script.
 
 You can find a way to parallelize this and submit it to batch (as well as the code to make the above mentioned signalstrenght file in this git repo: https://github.com/daniSchaefer/job_submission Unfortunately this only works out of the box on the condor-batch here in KA but its only the submission part that needs to be changed for you)
+
+
+## make some other nice plots
+
+makePHDplots.py  is a simple plotting script that makes for example nicer plots for the kernel resolution histograms and stuff like that. 
